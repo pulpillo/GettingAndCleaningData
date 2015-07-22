@@ -1,15 +1,5 @@
 library(reshape2)
 
-# Function that reads a file into a Data Table
-readFileToDataTable <- function (f) {
-  
-  #x <- read.table(f, nrows=5)
-  #x.classes <- lapply(x, class)
-  df <- read.table(f)
-  dt <- data.table(df)
-  dt
-}
-
 #path to the data
 dataPath  = "data"
 
@@ -39,7 +29,6 @@ data <- rbind(train, test)
 
 #Add Labels
 colnames(data) <- c("subject", "activity", featuresWanted.names)
-#setnames(data,names(data),c("subject", "activity", featuresWanted.names))
 
 #Load ACtivity Labels
 activityLabels <- read.table(file.path(dataPath,"activity_labels.txt"))

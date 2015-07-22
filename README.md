@@ -1,6 +1,11 @@
 # Getting and Cleaning Data - Course Project
 
 This is the course project for the Getting and Cleaning Data Coursera course.
+
+The folder data contains the dta files using in this project, previously downloaded from:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 The R script, `run_analysis.R`, does the following:
 
 1. Load the activity and feature info
