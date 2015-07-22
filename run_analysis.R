@@ -28,8 +28,7 @@ test <- cbind(testSubjects, testActivities, test)
 data <- rbind(train, test)
 
 #Add Labels
-#Not best performance, should change it to setnames.
-colnames(data) <- c("subject", "activity", featuresWanted.names)
+setNames(data,c("subject", "activity", featuresWanted.names))
 
 #Load ACtivity Labels
 activityLabels <- read.table(file.path(dataPath,"activity_labels.txt"))
