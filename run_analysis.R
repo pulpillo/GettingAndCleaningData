@@ -48,7 +48,7 @@ setNames(data,c("subject", "activity", featuresWanted.names))
 activityLabels <- read.table(file.path(dataPath,"activity_labels.txt"))
 activityLabels[,2] <- as.character(activityLabels[,2])
 
-#Convert activities and subjects into factors
+# Convert activities and subjects into factors
 data$activity <- factor(data$activity, levels = activityLabels[,1], labels = activityLabels[,2])
 data$subject <- as.factor(data$subject)
 
@@ -63,5 +63,5 @@ data.melted <- melt(data, id = c("subject", "activity"))
 # Prepary the tidy data set, calculate the mean
 data.tidy <- dcast(data.melted, subject + activity ~ variable, mean)
 
-# Write tidy dataset to tidy.txt fiel
+# Write tidy dataset to tidy.txt file
 write.table(data.tidy, "tidy.txt", row.names = FALSE, quote = FALSE)
